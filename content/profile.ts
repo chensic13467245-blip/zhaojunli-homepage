@@ -4,6 +4,15 @@ export type TimelineItem = {
   detail: string;
 };
 
+export type TimelineSection = {
+  eyebrow: string;
+  title: string;
+  groups: Array<{
+    title: string;
+    items: TimelineItem[];
+  }>;
+};
+
 export const profile = {
   name: "赵俊莉",
   englishName: "Junli Zhao",
@@ -20,46 +29,16 @@ export const profile = {
   ],
   contact: {
     email: "zhaojl@yeah.net",
-    phone: "13705424696",
     office: "青岛大学计算机科学技术学院",
   },
 };
 
-export const education: TimelineItem[] = [
-  {
-    period: "2012—2015",
-    title: "工学博士 · 计算机应用技术",
-    detail: "北京师范大学信息科学与技术学院",
-  },
-  {
-    period: "2003—2006",
-    title: "教育学硕士 · 课程与教学论（计算机教育）",
-    detail: "首都师范大学信息工程学院",
-  },
-  {
-    period: "1995—1999",
-    title: "理学学士 · 计算机科学教育",
-    detail: "山西师范大学数学与计算机系",
-  },
+export const contactItems = [
+  { label: "Email", value: profile.contact.email, href: `mailto:${profile.contact.email}` },
+  { label: "Affiliation", value: profile.contact.office },
 ];
 
-export const experience: TimelineItem[] = [
-  {
-    period: "2006—今",
-    title: "教师",
-    detail: "青岛大学",
-  },
-  {
-    period: "2016—2022",
-    title: "博士后 · 系统科学",
-    detail: "青岛大学系统科学博士后流动站",
-  },
-  {
-    period: "2018—2019",
-    title: "访问学者",
-    detail: "纽约州立大学石溪分校计算机科学系",
-  },
-];
+export const timelineSections: TimelineSection[] = [];
 
 export const academicAppointments = [
   "中国计算机学会计算机辅助设计与图形学专业委员会执行委员",
@@ -75,4 +54,3 @@ export const teaching = {
   undergraduate: ["虚拟现实", "科学计算与数学建模", "C语言程序设计"],
   postgraduate: ["数字几何处理", "数字图像处理"],
 };
-

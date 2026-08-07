@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { academicAppointments, education, experience, profile, teaching } from "@/content/profile";
+import { academicAppointments, profile, teaching, timelineSections } from "@/content/profile";
+import type { TimelineItem } from "@/content/profile";
 
-export const metadata: Metadata = { title: "个人简介", description: "赵俊莉教授的基本信息、教育经历、工作经历与学术任职。" };
+export const metadata: Metadata = { title: "个人简介", description: "赵俊莉教授的基本信息、研究概况与学术任职。" };
 
-function Timeline({ items }: { items: typeof education }) {
+function Timeline({ items }: { items: TimelineItem[] }) {
   return (
     <div className="border-l border-slate-200">
       {items.map((item) => (
@@ -50,12 +51,15 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-      <Section eyebrow="Education & Experience" title="教育与工作经历" className="bg-[#f7fafc]">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
-          <div><h3 className="mb-8 text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">教育经历</h3><Timeline items={education} /></div>
-          <div><h3 className="mb-8 text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">工作经历</h3><Timeline items={experience} /></div>
-        </div>
-      </Section>
+      {timelineSections.map((section) => (
+        <Section key={section.title} eyebrow={section.eyebrow} title={section.title} className="bg-[#f7fafc]">
+          <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
+            {section.groups.map((group) => (
+              <div key={group.title}><h3 className="mb-8 text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">{group.title}</h3><Timeline items={group.items} /></div>
+            ))}
+          </div>
+        </Section>
+      ))}
       <Section eyebrow="Academic Service" title="学术任职">
         <div className="grid gap-px border border-slate-200 bg-slate-200 md:grid-cols-2">
           {academicAppointments.map((item, index) => (
@@ -73,4 +77,3 @@ export default function AboutPage() {
     </>
   );
 }
-
