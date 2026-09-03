@@ -102,10 +102,16 @@ export function HomePageContent() {
       </Section>
 
       <Section id="team" eyebrow="Team" title="虚拟现实研究团队" description={teamSummary} className="scroll-mt-20">
-        <div className="divide-y divide-slate-200 border-y border-slate-200">
-          {teamMembers.map((member) => <article key={member.name} className="grid gap-1 py-4 md:grid-cols-[120px_220px_1fr] md:items-start md:gap-5">{member.profileUrl ? <a href={member.profileUrl} target="_blank" rel="noreferrer" className="font-semibold text-[#092a49] hover:text-[#0f6fa8]">{member.name} ↗</a> : <span className="font-semibold text-[#092a49]">{member.name}</span>}<span className="text-sm text-slate-600">{member.role}</span><span className="text-sm leading-6 text-slate-500">{member.research ?? "—"}</span></article>)}
+        <div className="grid gap-px border border-slate-200 bg-slate-200 sm:grid-cols-2">
+          {teamMembers.map((member) => (
+            <article key={member.name} className="flex flex-col bg-white p-6">
+              <h3 className="text-lg font-semibold text-[#092a49]">{member.name}</h3>
+              <p className="mt-1 text-sm font-medium text-slate-600">{member.role}</p>
+              {member.research ? <p className="mt-3 text-sm leading-6 text-slate-500">{member.research}</p> : null}
+              {member.profileUrl ? <a href={member.profileUrl} target="_blank" rel="noreferrer" className="mt-4 self-start text-sm font-semibold text-[#0f6fa8] hover:text-[#092a49]">个人主页 →</a> : null}
+            </article>
+          ))}
         </div>
-        <p className="mt-3 text-xs text-slate-500">仅展示官网与现有团队资料能够确认的公开信息，不展示成员照片。</p>
       </Section>
 
       <Section id="intellectual-property" eyebrow="Patents & Software" title="专利与软件著作权" className="scroll-mt-20 border-t border-slate-200 bg-[#f7fafc]">

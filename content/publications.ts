@@ -73,6 +73,7 @@ export const publications: Publication[] = [
     venue: "Pattern Recognition, 158: 111041",
     ranking: ["CCF B", "SCI 1区"],
     badge: "Pattern Recognition",
+    image: "/images/publications/mmae.jpg",
     doi: "https://doi.org/10.1016/j.patcog.2024.111041",
     code: "https://github.com/xiangxiang-wang/MMAE",
     representative: true,

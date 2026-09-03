@@ -20,7 +20,6 @@ export default function PublicationsPage() {
               <div className="flex items-center gap-2"><dt className="text-slate-600">CCF B</dt><dd className="font-mono font-semibold text-[#0f6fa8]">{publicationSummary.ccfB}</dd></div>
               <div className="flex items-center gap-2"><dt className="text-slate-600">CCF C</dt><dd className="font-mono font-semibold text-slate-600">{publicationSummary.ccfC}</dd></div>
             </dl>
-            <p className="mt-6 text-sm leading-7 text-slate-600">全部条目依据论文原文核对，作者列表中 Junli Zhao / 赵俊莉 加粗显示。</p>
           </aside>
           <PublicationList publications={publications} />
         </div>
