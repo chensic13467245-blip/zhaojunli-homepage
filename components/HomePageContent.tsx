@@ -96,7 +96,7 @@ export function HomePageContent() {
         </div>
       </Section>
 
-      <Section id="publications" eyebrow="Representative Publications" title="代表性论文" description="优先展示 CCF A、SCI 一区及重要图形学与视觉会议成果；链接仅在已确认真实来源时显示。" className="scroll-mt-20 border-t border-slate-200 bg-[#f7fafc]">
+      <Section id="publications" eyebrow="Representative Publications" title="代表性论文" description="以 CCF A 成果为主，辅以 SCI 一区等高水平工作；每篇附会议/期刊标识与论文代表图，链接仅在已确认真实来源时显示。" className="scroll-mt-20 border-t border-slate-200 bg-[#f7fafc]">
         <div className="border-b border-slate-200">{representativePublications.map((publication) => <PublicationCard key={publication.id} publication={publication} />)}</div>
         <div className="mt-7 text-right"><Link href="/publications" className="text-link">查看全部论文 / View All Publications →</Link></div>
       </Section>
