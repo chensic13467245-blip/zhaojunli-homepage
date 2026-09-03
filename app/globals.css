@@ -48,7 +48,7 @@ button:focus-visible {
 }
 
 .page-shell {
-  width: min(100% - 2.5rem, 1240px);
+  width: min(100% - 2.5rem, 1080px);
   margin-inline: auto;
 }
 
@@ -65,7 +65,7 @@ button:focus-visible {
 
 .section-title {
   color: var(--navy);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
   font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.1;
@@ -137,13 +137,13 @@ button:focus-visible {
 
 @media (min-width: 640px) {
   .page-shell {
-    width: min(100% - 4rem, 1240px);
+    width: min(100% - 4rem, 1080px);
   }
 }
 
 @media (min-width: 1024px) {
   .page-shell {
-    width: min(100% - 5rem, 1240px);
+    width: min(100% - 5rem, 1080px);
   }
 }
 
@@ -161,4 +161,3 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
-

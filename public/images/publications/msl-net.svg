@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">三维点云锐利特征检测研究示意</title>
+  <desc id="desc">多尺度点云表面与被检测特征边的抽象图形</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#082744"/><stop offset="1" stop-color="#0b5f91"/></linearGradient></defs>
+  <rect width="800" height="460" fill="url(#bg)"/>
+  <g transform="translate(76 145)" fill="none" stroke="#7dd3fc" stroke-width="2" opacity=".75">
+    <path d="M0 150 148 22l132 105 132-83 174 106"/><path d="M0 185 148 57l132 105 132-83 174 106"/>
+    <path d="M0 150v35M148 22v35M280 127v35M412 44v35M586 150v35"/>
+  </g>
+  <path d="M224 167 356 272 488 189" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#e0f2fe"><circle cx="224" cy="167" r="9"/><circle cx="356" cy="272" r="9"/><circle cx="488" cy="189" r="9"/></g>
+  <text x="70" y="70" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="700">MSL-NET</text>
+  <text x="70" y="102" fill="#bae6fd" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">SHARP FEATURE DETECTION</text>
+</svg>

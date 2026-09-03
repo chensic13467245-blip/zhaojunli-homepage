@@ -6,14 +6,13 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/", label: "首页", en: "Home" },
-  { href: "/about", label: "个人简介", en: "About" },
-  { href: "/research", label: "研究", en: "Research" },
-  { href: "/projects", label: "项目", en: "Projects" },
-  { href: "/publications", label: "论文", en: "Publications" },
-  { href: "/awards", label: "荣誉", en: "Awards" },
-  { href: "/team", label: "团队", en: "Team" },
-  { href: "/news", label: "动态", en: "News" },
-  { href: "/contact", label: "联系", en: "Contact" },
+  { href: "/#about", label: "简介", en: "About" },
+  { href: "/#research", label: "研究", en: "Research" },
+  { href: "/#projects", label: "项目", en: "Projects" },
+  { href: "/#publications", label: "论文", en: "Publications" },
+  { href: "/#team", label: "团队", en: "Team" },
+  { href: "/#intellectual-property", label: "专利软著", en: "IP" },
+  { href: "/#contact", label: "联系", en: "Contact" },
 ];
 
 export function Navbar() {
@@ -34,7 +33,7 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-0.5 xl:flex" aria-label="主导航">
           {navItems.map((item) => {
-            const active = pathname === item.href;
+            const active = item.href === "/" ? pathname === "/" : pathname === item.href;
             return (
               <Link
                 key={item.href}
@@ -79,4 +78,3 @@ export function Navbar() {
     </header>
   );
 }
-

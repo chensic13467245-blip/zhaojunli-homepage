@@ -11,12 +11,12 @@ export function Footer() {
           <a className="mt-2 inline-block text-sm text-sky-300 hover:text-white" href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
         </div>
         <div className="grid grid-cols-2 gap-x-10 gap-y-2 text-sm text-slate-300 sm:grid-cols-3">
-          <Link href="/research" className="hover:text-white">研究方向</Link>
-          <Link href="/publications" className="hover:text-white">学术论文</Link>
-          <Link href="/projects" className="hover:text-white">科研项目</Link>
-          <Link href="/team" className="hover:text-white">实验室团队</Link>
-          <Link href="/news" className="hover:text-white">新闻动态</Link>
-          <Link href="/contact" className="hover:text-white">联系方式</Link>
+          <Link href="/#about" className="hover:text-white">个人简介</Link>
+          <Link href="/#research" className="hover:text-white">研究方向</Link>
+          <Link href="/#publications" className="hover:text-white">代表论文</Link>
+          <Link href="/#projects" className="hover:text-white">科研项目</Link>
+          <Link href="/#team" className="hover:text-white">实验室团队</Link>
+          <Link href="/#intellectual-property" className="hover:text-white">专利与软著</Link>
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs tracking-wide text-slate-500">
@@ -25,4 +25,3 @@ export function Footer() {
     </footer>
   );
 }
-

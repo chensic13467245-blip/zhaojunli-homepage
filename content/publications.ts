@@ -6,7 +6,13 @@ export type Publication = {
   venue: string;
   ranking?: string[];
   doi?: string;
+  image?: string;
+  pdf?: string;
+  code?: string;
+  project?: string;
+  video?: string;
   featured?: boolean;
+  representative?: boolean;
 };
 
 export const publications: Publication[] = [
@@ -39,7 +45,12 @@ export const publications: Publication[] = [
     authors: "Xianhe Jiao, Chenlei Lv, Junli Zhao, Ran Yi, Yu-Hui Wen, Zhenkuan Pan, Zhongke Wu, Yong-Jin Liu",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence, 39(4): 4084–4092",
     ranking: ["CCF A"],
+    image: "/images/publications/weighted-poisson.svg",
+    pdf: "https://arxiv.org/pdf/2412.09177",
+    code: "https://github.com/vvvwo/Weighted-Poisson-disk-Resampling",
+    doi: "https://doi.org/10.1609/aaai.v39i4.32428",
     featured: true,
+    representative: true,
   },
   {
     id: "skull-to-face-2025",
@@ -48,7 +59,14 @@ export const publications: Publication[] = [
     authors: "Yongqing Liang, Congyi Zhang, Junli Zhao, Wenping Wang, Xin Li",
     venue: "IEEE Transactions on Visualization and Computer Graphics, 31(9): 6425–6436",
     ranking: ["SCI 1区", "CCF A"],
+    image: "/images/publications/skull-to-face.svg",
+    pdf: "https://arxiv.org/pdf/2403.16207",
+    code: "https://github.com/xmlyqing00/skull-to-face",
+    project: "https://xmlyqing00.github.io/skull-to-face-page/",
+    video: "https://xmlyqing00.github.io/skull-to-face-page/#demo-videos",
+    doi: "https://doi.org/10.1109/TVCG.2024.3515093",
     featured: true,
+    representative: true,
   },
   {
     id: "sketch123-2025",
@@ -91,6 +109,9 @@ export const publications: Publication[] = [
     authors: "Xiangxiang Wang, Lixing Fang, Junli Zhao, Zhenkuan Pan, Hui Li, Yi Li",
     venue: "Pattern Recognition, 158: 111041",
     ranking: ["SCI 1区", "CCF B"],
+    doi: "https://doi.org/10.1016/j.patcog.2024.111041",
+    code: "https://github.com/xiangxiang-wang/MMAE",
+    representative: true,
   },
   {
     id: "vitau-2025",
@@ -106,7 +127,12 @@ export const publications: Publication[] = [
     authors: "Xianhe Jiao, Chenlei Lv, Ran Yi, Junli Zhao, Zhenkuan Pan, Zhongke Wu, Yong-Jin Liu",
     venue: "IEEE Transactions on Visualization and Computer Graphics, 30(9): 6433–6446",
     ranking: ["SCI 1区", "CCF A"],
+    image: "/images/publications/msl-net.svg",
+    pdf: "https://aliexken.github.io/papers/2023_MSL-Net.pdf",
+    code: "https://github.com/XianheJiao/Sharp-feature-detection-in-point-cloud-",
+    doi: "https://doi.org/10.1109/TVCG.2023.3346907",
     featured: true,
+    representative: true,
   },
   {
     id: "siamese-cycle-2024",
@@ -114,7 +140,10 @@ export const publications: Publication[] = [
     title: "Intrinsic Morphological Relationship Guided 3D Craniofacial Reconstruction Using Siamese Cycle Attention GAN",
     authors: "Junli Zhao, Chengyuan Wang, Yu-Hui Wen, Fuqing Duan, Ran Yi, Yong-Jin Liu, Qingdong Long, Zhenkuan Pan, Xianfeng Gu",
     venue: "SIGGRAPH Asia 2024 Technical Communications",
+    ranking: ["SIGGRAPH Asia"],
+    doi: "https://doi.org/10.1145/3681758.3698016",
     featured: true,
+    representative: true,
   },
   {
     id: "mfdan-2024",
@@ -124,6 +153,7 @@ export const publications: Publication[] = [
     venue: "IEEE Transactions on Circuits and Systems for Video Technology, 34(12): 12823–12836",
     ranking: ["SCI 1区", "CCF B"],
     doi: "https://doi.org/10.1109/TCSVT.2024.3437481",
+    representative: true,
   },
   {
     id: "skeletonformer-2024",
@@ -204,6 +234,8 @@ export const publications: Publication[] = [
     authors: "Niankai Zhang, Junli Zhao, Fuqing Duan, Zhenkuan Pan, Zhongke Wu, Mingquan Zhou, Xianfeng Gu",
     venue: "30th ACM International Conference on Multimedia: 759–768",
     ranking: ["CCF A"],
+    doi: "https://doi.org/10.1145/3503161.3548254",
+    representative: true,
   },
   {
     id: "reflectance-attention-2022",
@@ -250,7 +282,10 @@ export const publications: Publication[] = [
     authors: "Junli Zhao, Xin Qi, Chengfeng Wen, Na Lei, Xianfeng Gu",
     venue: "IEEE/CVF International Conference on Computer Vision: 431–440",
     ranking: ["CCF A"],
+    pdf: "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhao_Automatic_and_Robust_Skull_Registration_Based_on_Discrete_Uniformization_ICCV_2019_paper.pdf",
+    doi: "https://doi.org/10.1109/ICCV.2019.00052",
     featured: true,
+    representative: true,
   },
   {
     id: "radial-curves-2019",
@@ -292,3 +327,4 @@ export const publicationSummary = {
 
 export const featuredPublications = publications.filter((item) => item.featured);
 
+export const representativePublications = publications.filter((item) => item.representative);
