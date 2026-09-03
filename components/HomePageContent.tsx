@@ -66,7 +66,7 @@ export function HomePageContent() {
 
       <section className="bg-[#092a49] text-white">
         <div className="page-shell grid divide-y divide-white/10 py-1 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {[["图形学 · 视觉 · 虚拟现实", "Research"], [`${projects.length} 项`, "主持项目"], ["CCF A · SCI 1区", "代表性成果"]].map(([value, label]) => (
+          {[["图形学 · 视觉 · 虚拟现实", "Research"], [`${projects.length} 项`, "主持项目"], ["AAAI · TVCG · ICCV · ACM MM", "代表性成果"]].map(([value, label]) => (
             <div key={label} className="px-5 py-5 first:pl-0 sm:px-7 sm:first:pl-0"><p className="text-lg font-semibold">{value}</p><p className="mt-1 text-xs uppercase tracking-[0.12em] text-sky-200/70">{label}</p></div>
           ))}
         </div>
@@ -96,7 +96,7 @@ export function HomePageContent() {
         </div>
       </Section>
 
-      <Section id="publications" eyebrow="Representative Publications" title="代表性论文" description="以 CCF A 成果为主，辅以 SCI 一区等高水平工作；每篇附会议/期刊标识与论文代表图，链接仅在已确认真实来源时显示。" className="scroll-mt-20 border-t border-slate-200 bg-[#f7fafc]">
+      <Section id="publications" eyebrow="Representative Publications" title="代表性论文" description="首页仅展示 CCF A 与 CCF B 代表成果，每篇附会议/期刊标识与论文代表图；链接仅在已确认真实来源时显示。" className="scroll-mt-20 border-t border-slate-200 bg-[#f7fafc]">
         <div className="border-b border-slate-200">{representativePublications.map((publication) => <PublicationCard key={publication.id} publication={publication} />)}</div>
         <div className="mt-7 text-right"><Link href="/publications" className="text-link">查看全部论文 / View All Publications →</Link></div>
       </Section>

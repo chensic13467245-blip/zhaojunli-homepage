@@ -11,6 +11,18 @@ function AuthorList({ authors }: { authors: string }) {
   );
 }
 
+function RankingChip({ rank }: { rank: string }) {
+  const style =
+    rank === "CCF A"
+      ? "border-transparent bg-[#092a49] text-white"
+      : rank === "CCF B"
+        ? "border-transparent bg-[#0f6fa8] text-white"
+        : rank === "CCF C"
+          ? "border-slate-300 bg-white text-slate-600"
+          : "border-sky-200 bg-sky-50 text-[#0b5f91]";
+  return <span className={`border px-2 py-0.5 text-xs font-semibold ${style}`}>{rank}</span>;
+}
+
 export function PublicationCard({ publication, compact = false }: { publication: Publication; compact?: boolean }) {
   const resources = [
     ["PDF", publication.pdf],
@@ -32,14 +44,15 @@ export function PublicationCard({ publication, compact = false }: { publication:
         <div>
           <h3 className="text-base font-semibold leading-7 text-slate-950 transition-colors group-hover:text-[#0f6fa8] sm:text-lg">{publication.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-600"><AuthorList authors={publication.authors} /></p>
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-            {publication.badge ? (
-              <span className="bg-[#092a49] px-2 py-0.5 text-xs font-semibold tracking-wide text-white">{publication.badge}</span>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            {publication.venueImage ? (
+              <Image src={publication.venueImage} alt={`${publication.badge ?? publication.venue} 标识`} width={120} height={17} className="h-[17px] w-auto object-contain" />
             ) : null}
-            <span className="italic text-slate-500">{publication.venue}</span>
-            {publication.ranking?.map((rank) => (
-              <span key={rank} className="border border-sky-200 bg-sky-50 px-2 py-0.5 text-xs font-semibold text-[#0b5f91]">{rank}</span>
-            ))}
+            {publication.badge ? (
+              <span className="border border-slate-300 bg-white px-2 py-0.5 text-xs font-semibold tracking-wide text-slate-600">{publication.badge}</span>
+            ) : null}
+            <span className="text-sm italic text-slate-500">{publication.venue}</span>
+            {publication.ranking?.map((rank) => <RankingChip key={rank} rank={rank} />)}
           </div>
           {resources.length ? (
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
